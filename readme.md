@@ -33,7 +33,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/bowser-2077/HessOS.git
-cd py-os
+cd hessos
 ```
 
 # Run the OS:
