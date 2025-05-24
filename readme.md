@@ -41,8 +41,8 @@ cd py-os
 python main.py
 
 On the first run, HessOS will install required dependencies automatically.
-##Usage
-###Basic Commands
+## Usage
+### Basic Commands
 
     help — Show available commands
 
@@ -74,11 +74,11 @@ On the first run, HessOS will install required dependencies automatically.
 
     shutdown — Shutdown the OS with animated loading of services
 
-Exiting
+## Exiting
 
     Use forceexit command to quit hessos OR use the *shutdown* command.
 
-Project Structure
+## Project Structure
 
 hessos/
 ├── cmds/          # Command implementations  
@@ -88,16 +88,16 @@ hessos/
 ├── utils/         # Utility modules (logger, helpers)  
 ├── main.py        # Entry point  
 
-Contributing
+# Contributing
 
 Feel free to open issues or pull requests! Add commands, improve UX, or optimize code.
 License
 
 MIT License © 2025 Gaetan LERLEY
-Contact
+## Contact
 
 Hostinfire — hostinfire@gmail.com
 GitHub: https://github.com/bowser-2077
 
-Happy HessIng! 🚀
+# Happy HessIng! 🚀
 
