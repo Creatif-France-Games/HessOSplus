@@ -81,6 +81,7 @@ On the first run, HessOS will install required dependencies automatically.
 ## Project Structure
 
 hessos/
+
 ├── cmds/          # Command implementations  
 ├── config/        # Configuration files and flags  
 ├── logs/          # Log files  
