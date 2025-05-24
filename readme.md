@@ -1,7 +1,7 @@
-# Py-OS
+# HessOS
 
-Py-OS is a lightweight, custom command-line operating system simulator written in Python.  
-Designed for learning, tinkering, and fun, Py-OS offers a simple shell with essential commands, boot animation, dependency management, and more.
+HessOS is a lightweight, custom command-line operating system simulator written in Python.  
+Designed for learning, tinkering, and fun, HessOS offers a simple shell with essential commands, boot animation, dependency management, and more.
 
 ---
 
