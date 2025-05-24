@@ -37,8 +37,9 @@ cd hessos
 ```
 
 # Run the OS:
-
+```
 python main.py
+```
 
 On the first run, HessOS will install required dependencies automatically.
 ## Usage
