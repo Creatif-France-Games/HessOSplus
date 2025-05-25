@@ -1,0 +1,72 @@
+import curses
+from curses import KEY_RIGHT, KEY_LEFT, KEY_UP, KEY_DOWN
+from random import randint
+
+
+def run(args=None):
+    curses.wrapper(main)
+
+
+def main(win):
+    curses.curs_set(0)
+    win.nodelay(1)
+    win.timeout(100)
+
+    sh, sw = win.getmaxyx()
+    w = win
+    snk_x = sw // 4
+    snk_y = sh // 2
+    snake = [
+        [snk_y, snk_x],
+        [snk_y, snk_x - 1],
+        [snk_y, snk_x - 2]
+    ]
+    food = [randint(1, sh - 2), randint(1, sw - 2)]
+    w.addch(food[0], food[1], '*')
+
+    key = KEY_RIGHT
+    ESC = 27
+    score = 0
+
+    while True:
+        next_key = w.getch()
+        if next_key != -1:
+            if next_key == ESC:
+                break
+            elif next_key in [KEY_RIGHT, KEY_LEFT, KEY_UP, KEY_DOWN]:
+                key = next_key
+
+        head = snake[0]
+        if key == KEY_RIGHT:
+            new_head = [head[0], head[1] + 1]
+        elif key == KEY_LEFT:
+            new_head = [head[0], head[1] - 1]
+        elif key == KEY_UP:
+            new_head = [head[0] - 1, head[1]]
+        elif key == KEY_DOWN:
+            new_head = [head[0] + 1, head[1]]
+
+        # collision
+        if (new_head in snake) or (new_head[0] in [0, sh]) or (new_head[1] in [0, sw]):
+            break
+
+        snake.insert(0, new_head)
+        if new_head == food:
+            score += 1
+            food = None
+            while food is None:
+                nf = [randint(1, sh - 2), randint(1, sw - 2)]
+                if nf not in snake:
+                    food = nf
+            w.addch(food[0], food[1], '*')
+        else:
+            tail = snake.pop()
+            w.addch(tail[0], tail[1], ' ')
+
+        w.addch(snake[0][0], snake[0][1], '#')
+
+    w.nodelay(0)
+    w.clear()
+    msg = f"Game Over. Score: {score} - Press any key to return."
+    w.addstr(sh // 2, max(0, (sw // 2 - len(msg) // 2)), msg)
+    w.getch()

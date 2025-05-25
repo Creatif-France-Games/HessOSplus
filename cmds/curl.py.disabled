@@ -1,0 +1,12 @@
+
+import requests
+
+def run(args):
+    if not args:
+        print("Usage: curl <url>")
+        return
+    try:
+        response = requests.get(args[0])
+        print(response.text)
+    except Exception as e:
+        print(f"Error: {e}")
