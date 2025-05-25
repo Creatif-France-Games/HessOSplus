@@ -9,7 +9,7 @@ def run(args):
     url = args[0]
     downloads_dir = os.path.join(os.getcwd(), "downloads")
 
-    # Créer le dossier si nécessaire
+    # folder creation if needed
     if not os.path.exists(downloads_dir):
         os.makedirs(downloads_dir)
 
