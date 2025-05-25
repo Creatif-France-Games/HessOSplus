@@ -21,6 +21,12 @@ def clear_screen():
 def get_terminal_size():
     return shutil.get_terminal_size()
 
+def print_centered_logo():
+    cols, _ = get_terminal_size()
+    for line in LOGO.strip("\n").split("\n"):
+        padding = (cols - len(line)) // 2
+        print(" " * max(padding, 0) + line)
+
 def loading_bar(duration=6, message=None):
     cols, lines = get_terminal_size()
     bar_width = min(40, cols - 20)
@@ -30,12 +36,12 @@ def loading_bar(duration=6, message=None):
         percent = i / bar_width
         bar = "#" * i + "_" * (bar_width - i)
         loading_text = f"Loading: [{bar}] {int(percent * 100)}%"
-        info_text = "HessOS - 2.0 | Kernel - 1.4"
+        info_text = "HessOS - 3.0 | Kernel - 7.4"
         loading_offset = (cols - len(loading_text)) // 2
         info_offset = (cols - len(info_text)) // 2
 
         clear_screen()
-        print(LOGO)
+        print_centered_logo()
         print("\n" * (loading_line - 7))
         print(" " * loading_offset + loading_text)
         print(" " * info_offset + info_text)
@@ -48,16 +54,16 @@ def loading_bar(duration=6, message=None):
     print()
 
 def install_dependencies():
-    packages = ["requests", "paramiko", "GitPython"]  # adapte ici les paquets
-    print("\nChecking System Intergrity...\n")
+    packages = ["requests", "paramiko", "GitPython"]
+    print("\nChecking System Integrity...\n")
     for pkg in packages:
-        subprocess.run([os.sys.executable, "-m", "pip", "install", pkg], stdout=subprocess.DEVNULL,
-                       stderr=subprocess.DEVNULL)
+        subprocess.run([os.sys.executable, "-m", "pip", "install", pkg],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("\nDone\n")
 
 def boot():
     clear_screen()
-    print(LOGO)
+    print_centered_logo()
 
     if not os.path.exists(CONFIG_DIR):
         os.mkdir(CONFIG_DIR)
