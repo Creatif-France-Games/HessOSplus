@@ -4,9 +4,8 @@ import io
 import os
 import shutil
 import sys
-import time
 
-def update_os():
+def run(args):
     zip_url = "https://github.com/bowser-2077/HessOS/archive/refs/heads/main.zip"
 
     print("Downloading latest HessOS update...")
@@ -41,8 +40,6 @@ def update_os():
     shutil.rmtree(tmp_dir)
 
     print("Update complete! Restarting HessOS now...")
-    time.sleep(2)
 
-    # Restart the OS script (replace current process)
     python = sys.executable
     os.execv(python, [python] + sys.argv)
