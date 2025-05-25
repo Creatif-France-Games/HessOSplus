@@ -16,6 +16,7 @@ def shutdown_animation():
 
     service_names = [f"{''.join(random.choices('WXCVBN', k=8))}.service" for _ in range(total_services)]
 
+    # Oui ici c'est du chatgpt
     for svc in service_names:
         # Sauvegarder la position du curseur
         print('\033[s', end='')
@@ -31,6 +32,7 @@ def shutdown_animation():
         print('\033[u', end='')
         sys.stdout.flush()
         time.sleep(delay)
+        # et la c'en est plus
 
     clear_screen()
     print("System is shutting down...")
