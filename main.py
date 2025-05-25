@@ -24,7 +24,7 @@ def main():
     print("Type 'help' for a list of commands.")
 
     while True:
-        command = input("| HessOS 1.0 | >> ").strip()
+        command = input("| HessOS 3.0 | >> ").strip()
         if command.lower() in ("forceexit", "exit", "quit"):
             clear_screen()
             print("Bye!")
