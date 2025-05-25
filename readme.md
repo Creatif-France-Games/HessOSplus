@@ -94,7 +94,11 @@ hessos/
 ├── logs/          # Log files  
 ├── startup/       # Boot scripts and animations  
 ├── utils/         # Utility modules (logger, helpers)  
-├── main.py        # Entry point  
+├── main.py        # Entry point
+
+## SSH Client
+
+HessOS come with an integrated ssh client
 
 # Contributing
 
