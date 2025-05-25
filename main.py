@@ -20,12 +20,12 @@ def handle_command(command_line):
 def main():
     boot.boot()
 
-    print("Welcome to HessOS V3")
+    print("Welcome to HessOS V4")
     print("Type 'help' for a list of commands.")
     print(" --> Dont forget to star the repo : github.com/bowser-2077/HessOS")
 
     while True:
-        command = input("| HessOS 3.0 | >> ").strip()
+        command = input("| HessOS 4.0 | >> ").strip()
         if command.lower() in ("forceexit", "exit", "quit"):
             clear_screen()
             print("Bye!")
