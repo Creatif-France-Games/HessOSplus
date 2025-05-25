@@ -77,6 +77,10 @@ On the first run, HessOS will install required dependencies automatically.
 
     shutdown — Shutdown the OS with animated loading of services
 
+    package — Install package (only git for now)
+
+    update — Update the os (Very Unstable for now!)
+
 ## Exiting
 
     Use forceexit command to quit hessos OR use the *shutdown* command.
