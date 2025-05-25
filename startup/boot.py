@@ -30,7 +30,7 @@ def loading_bar(duration=6, message=None):
         percent = i / bar_width
         bar = "#" * i + "_" * (bar_width - i)
         loading_text = f"Loading: [{bar}] {int(percent * 100)}%"
-        info_text = "HessOS - 1.0 | Kernel - 1.0"
+        info_text = "HessOS - 2.0 | Kernel - 1.4"
         loading_offset = (cols - len(loading_text)) // 2
         info_offset = (cols - len(info_text)) // 2
 
