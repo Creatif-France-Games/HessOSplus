@@ -42,7 +42,5 @@ def shutdown_animation():
 def run(args):
     shutdown_animation()
     sys.exit()
-    # Ici tu peux ajouter un exit si tu veux couper la boucle principale
-    # import sys
-    # sys.exit()
+    
 
