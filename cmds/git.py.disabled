@@ -1,0 +1,41 @@
+from git import Repo, GitCommandError
+import os
+
+def run(args):
+    if not args:
+        print("Usage: git <clone|status|log> [repo_url|path]")
+        return
+
+    command = args[0].lower()
+
+    try:
+        if command == "clone":
+            if len(args) < 2:
+                print("Usage: git clone <repo_url>")
+                return
+            url = args[1]
+            path = args[2] if len(args) > 2 else os.path.basename(url).replace(".git", "")
+            print(f"Cloning {url} into {path}...")
+            Repo.clone_from(url, path)
+            print("Clone successful.")
+
+        elif command == "status":
+            repo = Repo(os.getcwd())
+            print(repo.git.status())
+
+        elif command == "log":
+            repo = Repo(os.getcwd())
+            for commit in repo.iter_commits():
+                print(f"Commit: {commit.hexsha[:7]}")
+                print(f"Author: {commit.author.name} <{commit.author.email}>")
+                print(f"Date: {commit.committed_datetime}")
+                print(f"Message: {commit.message.strip()}")
+                print("-" * 40)
+
+        else:
+            print(f"Unknown git command: {command}")
+
+    except GitCommandError as e:
+        print(f"Git error: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
