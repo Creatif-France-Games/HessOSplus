@@ -99,7 +99,8 @@ hessos/
 ## SSH Client
 
 HessOS come with an integrated ssh client
-
+## Updates system
+The update command will not work with HessOS V1, please install the V2 of HessOS to be able to use the update command
 # Contributing
 
 Feel free to open issues or pull requests! Add commands, improve UX, or optimize code.
