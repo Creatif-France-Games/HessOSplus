@@ -1,4 +1,4 @@
 def run(args):
-    print("HessOS - Fake Python OS")
-    print("Made by un vrai sigma 💀")
-    print("Version 0.1")
+    print("HessOS - OS V2 - Kernel V1.4")
+    print("Made by bowser-2077")
+    print("OS Distro : HessDefault")
