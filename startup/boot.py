@@ -48,7 +48,7 @@ def loading_bar(duration=6, message=None):
     print()
 
 def install_dependencies():
-    packages = ["requests", "paramiko", "pip install GitPython"]  # adapte ici les paquets
+    packages = ["requests", "paramiko", "GitPython"]  # adapte ici les paquets
     print("\nChecking System Intergrity...\n")
     for pkg in packages:
         subprocess.run([os.sys.executable, "-m", "pip", "install", pkg], stdout=subprocess.DEVNULL,
