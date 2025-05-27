@@ -1,0 +1,8 @@
+import sys, qrcode
+if len(sys.argv) > 1:
+    qr = qrcode.QRCode()
+    qr.add_data(sys.argv[1])
+    qr.make()
+    qr.print_ascii()
+else:
+    print("Usage: qr <url>")
