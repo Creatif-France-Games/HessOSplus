@@ -1,8 +1,16 @@
-import sys, qrcode
-if len(sys.argv) > 1:
+import qrcode
+
+def run(args):
+    if not args:
+        print("Usage: qr <text or url>")
+        return
+
+    data = " ".join(args)
     qr = qrcode.QRCode()
-    qr.add_data(sys.argv[1])
+    qr.add_data(data)
     qr.make()
-    qr.print_ascii()
-else:
-    print("Usage: qr <url>")
+
+    qr_matrix = qr.get_matrix()
+    for row in qr_matrix:
+        line = ''.join(['██' if cell else '  ' for cell in row])
+        print(line)
