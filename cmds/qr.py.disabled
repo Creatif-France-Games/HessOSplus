@@ -1,10 +1,8 @@
-import qrcode
-import sys
-
-def run(args):
-    if not args:
-        print("Usage: qr <text/url>")
-        return
-    data = " ".join(args)
-    img = qrcode.make(data)
-    img.show()
+import sys, qrcode
+if len(sys.argv) > 1:
+    qr = qrcode.QRCode()
+    qr.add_data(sys.argv[1])
+    qr.make()
+    qr.print_ascii()
+else:
+    print("Usage: qr <url>")
