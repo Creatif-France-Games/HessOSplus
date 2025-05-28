@@ -1,13 +1,14 @@
-import sys, requests
-def get_price(symbol):
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={symbol}&vs_currencies=usd"
-    r = requests.get(url)
-    if r.ok:
-        print(f"{symbol.upper()} = ${r.json()[symbol]['usd']}")
-    else:
-        print("Erreur: monnaie non trouvée")
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        get_price(sys.argv[1].lower())
-    else:
+import requests
+
+def run(args):
+    if not args:
         print("Usage: stock <btc/eth/...>")
+        return
+    coin = args[0].lower()
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
+    try:
+        response = requests.get(url).json()
+        price = response[coin]["usd"]
+        print(f"Current {coin.upper()} price: ${price}")
+    except:
+        print("Failed to fetch price. Is the coin name correct?")

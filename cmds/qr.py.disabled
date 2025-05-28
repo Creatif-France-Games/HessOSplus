@@ -1,16 +1,10 @@
 import qrcode
+import sys
 
 def run(args):
     if not args:
-        print("Usage: qr <text or url>")
+        print("Usage: qr <text/url>")
         return
-
     data = " ".join(args)
-    qr = qrcode.QRCode()
-    qr.add_data(data)
-    qr.make()
-
-    qr_matrix = qr.get_matrix()
-    for row in qr_matrix:
-        line = ''.join(['██' if cell else '  ' for cell in row])
-        print(line)
+    img = qrcode.make(data)
+    img.show()

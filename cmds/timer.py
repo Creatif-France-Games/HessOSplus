@@ -1,10 +1,10 @@
-import sys, time
-if len(sys.argv) > 1 and sys.argv[1].isdigit():
-    seconds = int(sys.argv[1])
-    while seconds > 0:
-        print(f"Temps restant : {seconds} sec", end="\r")
-        time.sleep(1)
-        seconds -= 1
-    print("\nTimer terminé.")
-else:
-    print("Usage: timer <secondes>")
+import time
+
+def run(args):
+    if not args or not args[0].isdigit():
+        print("Usage: timer <seconds>")
+        return
+    seconds = int(args[0])
+    print(f"Timer started for {seconds} seconds...")
+    time.sleep(seconds)
+    print("Time's up!")
