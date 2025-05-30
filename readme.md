@@ -56,37 +56,21 @@ command into HessOS.
 
 
     help — Show available commands
-
     ls — List files in current directory
-
     cd <folder> — Change directory
-
     mkdir <folder> — Create a new directory
-
     rmdir <folder> — Remove a directory
-
     rm <file> — Delete a file
-
     touch <file> — Create a new empty file
-
     cat <file> — Display file content
-
     head <file> — Show first 10 lines of a file
-
     clear — Clear the screen
-
     ping <host> — Ping a host to check network connectivity
-
     ssh <user>@<host> — Connect to a remote host via SSH
-
     download <url> — Download a file from a URL into downloads/ folder
-
     showlogs — Display recent logs
-
     shutdown — Shutdown the OS with animated loading of services
-
     package — Install package (only git for now)
-
     update — Update the os (Very Unstable for now!)
 
 ## Package Command Usage
