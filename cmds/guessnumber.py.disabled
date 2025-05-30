@@ -21,9 +21,9 @@ def check_guess(guess, secret):
 
 def single_player():
     print("\n1) Easy (1 to 10)\n2) Medium (1 to 100)\n3) Hard (1 to 1000)")
-    choice = input("\nChoose a difficulty level: ")
-
+    
     while True:
+        choice = input("\nChoose a difficulty level: ")
         if choice == "1":
             secret = random.randint(1, 10)
             break
@@ -40,6 +40,7 @@ def single_player():
     while not win:
         guess = input("\nEnter your guess: ")
         check_guess(guess, secret)
+
 
 def multiplayer():
     secret = "x"
