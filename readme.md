@@ -122,11 +122,11 @@ command into HessOS.
 
   Requirements to add your package
 
-  -> Your name (Username, not real if you want) need to be somewhere in the code (as a command like "<packagename> about" or a comment on the code "# made by <name>")
-  -> Your code cant be obfuscated
-  -> Your package cannot use any visual ui (PySide6, PyQt5,...) its only cli
-  -> Your package cant be used to track people activity
-  -> Your package need to be usable on Linux and Windows 10/11
+ - -> Your name (Username, not real if you want) need to be somewhere in the code (as a command like "<packagename> about" or a comment on the code "# made by <name>")
+ - -> Your code cant be obfuscated
+ - -> Your package cannot use any visual ui (PySide6, PyQt5,...) its only cli
+ - -> Your package cant be used to track people activity
+ - -> Your package need to be usable on Linux and Windows 10/11
 
 Thanks!
     
