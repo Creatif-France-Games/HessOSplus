@@ -39,16 +39,21 @@ cd hessos
 ```
 
 # Run the OS:
+
 ```
 python main.py
 ```
 
-On the first run, you will need to install required dependencies by using the ```py install-deps.py``` command into HessOS.
+On the first run, you will need to install required dependencies by using the 
+```
+py install-deps.py
+``` 
+command into HessOS.
 
-## Usage
-
+# HessOS Usage
 
 ### Basic Commands
+
 
     help — Show available commands
 
@@ -86,9 +91,12 @@ On the first run, you will need to install required dependencies by using the ``
 
 ## Package Command Usage
 
+
   Multiple packages can be installed, here all of the informations that you need to know about
 
+
 ### List of the packages
+
 
   - 2048 (Game, indev)
   - Ascii-art (Utility, working)
@@ -107,18 +115,21 @@ On the first run, you will need to install required dependencies by using the ``
 
 ### Install a package
 
-  Usage : bash```package install <package_name>```
 
-  Make sure to execute : bash```reload-cmds``` before executing a package!
+  Usage : ```package install <package_name>```
+
+  Make sure to execute : ```reload-cmds``` before executing a package!
 
 ### Uninstall a package
 
-  
-  Usage : bash```package uninstall <package_name>```
 
-  Make sure to execute : bash```reload-cmds``` to properly uninstall it.
+  
+  Usage : ```package uninstall <package_name>```
+
+  Make sure to execute : ```reload-cmds``` to properly uninstall it.
 
 ### Add your own package
+
 
   You can code your own package and open a pull request with your package informations, code, and dependencies
   I will review it and add it to the "OS"
@@ -138,9 +149,11 @@ Thanks!
 
 ## Exiting
 
+
     Use forceexit command to quit hessos OR use the shutdown command.
 
 ## Project Structure
+
 
 hessos/
 
@@ -153,7 +166,7 @@ hessos/
 
 ## SSH Client
 
-HessOS come with an integrated ssh client, usable with : bash```ssh <host> <username> <password>```
+HessOS come with an integrated ssh client, usable with : ```ssh <host> <username> <password>```
 Your will need to have paramiko installed to use SSH.
 
 ## Updates system
@@ -161,12 +174,13 @@ Your will need to have paramiko installed to use SSH.
 The update command will not work with HessOS V1, please install the V2 of HessOS to be able to use the update command
 After the update please manually restart your PC, issue will be fixed in a couple of days
 
-# Contributing
+## Contributing
 
 Feel free to open issues or pull requests! Add commands, improve UX, or optimize code.
 License
 
 MIT License © 2025 Gaetan LERLEY
+
 ## Contact
 
 Hostinfire — hostinfire@gmail.com
