@@ -44,7 +44,10 @@ python main.py
 ```
 
 On the first run, you will need to install required dependencies by using the ```py install-deps.py``` command into HessOS.
+
 ## Usage
+
+
 ### Basic Commands
 
     help — Show available commands
@@ -81,26 +84,83 @@ On the first run, you will need to install required dependencies by using the ``
 
     update — Update the os (Very Unstable for now!)
 
+## Package Command Usage
+
+  Multiple packages can be installed, here all of the informations that you need to know about
+
+### List of the packages
+
+  - 2048 (Game, indev)
+  - Ascii-art (Utility, working)
+  - Curl (Utility, working)
+  - Download (Utility, working, unstable)
+  - Git (Utility, untested, unstable)
+  - Qr (Fun, utility, working)
+  - Snake (Game, working, a bit bugged)
+  - Speedtest (Utility, untested)
+  - Stock (Money, Money, Money, working)
+  - Sysinfo (No implemented yet but working) -> to install it, you will need to modify the package list at /config/packages.json and add the package name
+  - Tetris (Game, indev)
+
+
+    Note : all indev package are not supposed to work.
+
+### Install a package
+
+  Usage : bash```package install <package_name>```
+
+  Make sure to execute : bash```reload-cmds``` before executing a package!
+
+### Uninstall a package
+
+  
+  Usage : bash```package uninstall <package_name>```
+
+  Make sure to execute : bash```reload-cmds``` to properly uninstall it.
+
+### Add your own package
+
+  You can code your own package and open a pull request with your package informations, code, and dependencies
+  I will review it and add it to the "OS"
+
+  Make sure to code it in python (Python 3 and older only)
+
+  Requirements to add your package
+
+  -> Your name (Username, not real if you want) need to be somewhere in the code (as a command like "<packagename> about" or a comment on the code "# made by <name>")
+  -> Your code cant be obfuscated
+  -> Your package cannot use any visual ui (PySide6, PyQt5,...) its only cli
+  -> Your package cant be used to track people activity
+  -> Your package need to be usable on Linux and Windows 10/11
+
+Thanks!
+    
+
 ## Exiting
 
-    Use forceexit command to quit hessos OR use the *shutdown* command.
+    Use forceexit command to quit hessos OR use the shutdown command.
 
 ## Project Structure
 
 hessos/
 
-├── cmds/          # Command implementations  
-├── config/        # Configuration files and flags  
-├── logs/          # Log files  
+├── cmds/          # Command implementations and package python files  
+├── config/        # Configuration files and and package list file
+├── logs/          # Log files (Not working yet) 
 ├── startup/       # Boot scripts and animations  
-├── utils/         # Utility modules (logger, helpers)  
-├── main.py        # Entry point
+├── utils/         # Utility modules (logger, helpers) -> not working yet  
+├── main.py        # Entry point, start the os with this file
 
 ## SSH Client
 
-HessOS come with an integrated ssh client
+HessOS come with an integrated ssh client, usable with : bash```ssh <host> <username> <password>```
+Your will need to have paramiko installed to use SSH.
+
 ## Updates system
+
 The update command will not work with HessOS V1, please install the V2 of HessOS to be able to use the update command
+After the update please manually restart your PC, issue will be fixed in a couple of days
+
 # Contributing
 
 Feel free to open issues or pull requests! Add commands, improve UX, or optimize code.
