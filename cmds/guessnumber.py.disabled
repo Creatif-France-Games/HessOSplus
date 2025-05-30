@@ -1,7 +1,10 @@
 import getpass
 import random
 
+win = False  # Variable globale
+
 def check_guess(guess, secret):
+    global win
     try:
         guess = int(guess)
     except ValueError:
@@ -13,7 +16,6 @@ def check_guess(guess, secret):
             print("\nHigher")
         else:
             print(f"\nCongratulations! The secret number was {secret}!\n")
-            global win
             win = True
     return win
 
@@ -52,17 +54,22 @@ def multiplayer():
         guess = input("\nEnter your guess: ")
         check_guess(guess, secret)
 
-print("========== Guess The Number ==========\n")
-running = True
-
-while running:
-    print("1) Single Player\n2) Multiplayer")
-    choice = input("\nChoose your game mode: ")
+def run(args):
+    global win
+    print("========== Guess The Number ==========\n")
     win = False
+
+    if not args:
+        print("Usage: guess [1|2]")
+        print("  1 = Single Player")
+        print("  2 = Multiplayer")
+        return
+
+    choice = args[0]
 
     if choice == "1":
         single_player()
     elif choice == "2":
         multiplayer()
     else:
-        print("\nInvalid choice, please try again.\n")
+        print("\nInvalid choice, use 1 or 2.\n")
