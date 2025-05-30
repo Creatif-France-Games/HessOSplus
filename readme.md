@@ -43,7 +43,7 @@ cd hessos
 python main.py
 ```
 
-On the first run, HessOS will install required dependencies automatically.
+On the first run, you will need to install required dependencies by using the ````py install-deps.py``` command into HessOS.
 ## Usage
 ### Basic Commands
 
