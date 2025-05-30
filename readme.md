@@ -93,6 +93,7 @@ command into HessOS.
   - Stock (Money, Money, Money, working)
   - Sysinfo (No implemented yet but working) -> to install it, you will need to modify the package list at /config/packages.json and add the package name
   - Tetris (Game, indev)
+  - Guessnumber (Game, localmultiplayer, working, unstable)
 
 
     Note : all indev package are not supposed to work.
