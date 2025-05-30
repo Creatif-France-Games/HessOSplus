@@ -1,0 +1,68 @@
+import getpass
+import random
+
+def check_guess(guess, secret):
+    try:
+        guess = int(guess)
+    except ValueError:
+        print("\nPlease enter a valid integer!")
+    else:
+        if guess > secret:
+            print("\nLower")
+        elif guess < secret:
+            print("\nHigher")
+        else:
+            print(f"\nCongratulations! The secret number was {secret}!\n")
+            global win
+            win = True
+    return win
+
+def single_player():
+    print("\n1) Easy (1 to 10)\n2) Medium (1 to 100)\n3) Hard (1 to 1000)")
+    choice = input("\nChoose a difficulty level: ")
+
+    while True:
+        if choice == "1":
+            secret = random.randint(1, 10)
+            break
+        elif choice == "2":
+            secret = random.randint(1, 100)
+            break
+        elif choice == "3":
+            secret = random.randint(1, 1000)
+            break
+        else:
+            print("\nPlease enter a valid choice!")
+
+    global win
+    while not win:
+        guess = input("\nEnter your guess: ")
+        check_guess(guess, secret)
+
+def multiplayer():
+    secret = "x"
+    while not isinstance(secret, int):
+        try:
+            secret = int(getpass.getpass("\nEnter the secret number: "))
+        except ValueError:
+            print("\nPlease enter a valid integer!")
+
+    global win
+    while not win:
+        guess = input("\nEnter your guess: ")
+        check_guess(guess, secret)
+
+print("========== Guess The Number ==========\n")
+running = True
+
+while running:
+    print("1) Single Player\n2) Multiplayer")
+    choice = input("\nChoose your game mode: ")
+    win = False
+
+    if choice == "1":
+        single_player()
+    elif choice == "2":
+        multiplayer()
+    else:
+        print("\nInvalid choice, please try again.\n")
