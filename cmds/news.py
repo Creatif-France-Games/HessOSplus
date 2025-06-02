@@ -1,7 +1,7 @@
 import feedparser
 
 def main(args):
-    print("📰 Fetching the latest tech news...")
+    print("Fetching the latest tech news...")
 
     feed_url = "https://www.theverge.com/rss/index.xml"
     feed = feedparser.parse(feed_url)
@@ -11,5 +11,5 @@ def main(args):
         return
 
     for entry in feed.entries[:5]:
-        print(f"\n📌 {entry.title}")
-        print(f"🔗 {entry.link}")
+        print(f"\n {entry.title}")
+        print(f"{entry.link}")
