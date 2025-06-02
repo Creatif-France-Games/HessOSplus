@@ -8,7 +8,8 @@ DEPENDENCIES = [
     "speedtest-cli",
     "qrcode",
     "pillow",           
-    "windows-curses"   
+    "windows-curses"
+    "feedparser"
 ]
 
 def install(package):
