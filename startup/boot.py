@@ -36,7 +36,7 @@ def loading_bar(duration=6, message=None):
         percent = i / bar_width
         bar = "#" * i + "_" * (bar_width - i)
         loading_text = f"Loading: [{bar}] {int(percent * 100)}%"
-        info_text = "HessOS - 4.5 | Kernel - 7.4"
+        info_text = "HessOS - 4.5 + GUI | Kernel - 7.4"
         loading_offset = (cols - len(loading_text)) // 2
         info_offset = (cols - len(info_text)) // 2
 
