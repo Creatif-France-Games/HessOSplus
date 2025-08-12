@@ -60,7 +60,7 @@ def run(args):
             print(f"Package '{pkg_name}' is not installable (not in config).")
             return
         os.rename(disabled_file, pkg_file)
-        print(f"Package '{pkg_name}' installed.")
+        print(f"Package '{pkg_name}' installed. Dont forget to execute 'reload-cmds' to apply the changes")
         return
 
     if action == "uninstall":
@@ -75,3 +75,4 @@ def run(args):
         return
 
     print("Unknown action. Use install, uninstall or list.")
+
