@@ -1,4 +1,5 @@
 {
-  "packages": ["git", "wget", "curl", "snake", "ascii-art", "2048", "qr", "speedtest", "stock", "tetris", "guessnumber", "todo"]
+  "packages": ["git", "wget", "curl", "snake", "ascii-art", "2048", "qr", "speedtest", "stock", "tetris", "guessnumber", "todo", "hangman"]
 }
+
 
