@@ -1,0 +1,49 @@
+import random
+
+WORDS = [
+    "python", "computer", "programming", "hessos", "keyboard",
+    "developer", "window", "software", "project", "terminal"
+]
+
+def run(args):
+    word = random.choice(WORDS).lower()
+    found_letters = set()
+    wrong_letters = set()
+    lives = 6
+
+    print("=== Hangman Game ===")
+    print("Guess the word!")
+    print("You have", lives, "lives.")
+    print()
+
+    while lives > 0:
+        # Display current progress
+        display = " ".join([letter if letter in found_letters else "_" for letter in word])
+        print(display)
+        print("Wrong letters:", " ".join(sorted(wrong_letters)) if wrong_letters else "None")
+        print()
+
+        # Check win condition
+        if all(letter in found_letters for letter in word):
+            print("You won! The word was:", word)
+            return
+
+        # Ask for a letter
+        letter = input("Enter a letter: ").lower().strip()
+        if not letter.isalpha() or len(letter) != 1:
+            print("Please enter a single letter.")
+            continue
+        if letter in found_letters or letter in wrong_letters:
+            print("You already tried this letter.")
+            continue
+
+        # Check guess
+        if letter in word:
+            found_letters.add(letter)
+            print("Correct!")
+        else:
+            wrong_letters.add(letter)
+            lives -= 1
+            print(f"Wrong. {lives} lives remaining.")
+
+    print("\nGame over! The word was:", word)
