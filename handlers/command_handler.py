@@ -20,3 +20,5 @@ def handle_command(command_line):
     except Exception as e:
         print(f"Error running command '{cmd}': {e}")
         logger.log(f"Error in command '{command_line}': {e}")
+
+# Not used for now
