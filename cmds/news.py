@@ -1,6 +1,6 @@
 import feedparser
 
-def main(args):
+def run(args):
     print("Fetching the latest tech news...")
 
     feed_url = "https://www.theverge.com/rss/index.xml"
